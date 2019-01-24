@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #fff;
+    color: #555;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+@font-face{
+    font-family: 'icons';
+    src: url('../fonts/icomoon.woff') format("woff") ;
+    font-weight: normal;
+    font-size: 16px;
+}
+img{
+    width: 100%;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-color: #333;
+    perspective: 800px;
+}
+.photo{
+    width: 260px;
+    height: 320px;
+    position: absolute;
+    z-index: 1;
+    transition: all .6s ;
+}
+.photo .side{
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+.photo .side-front{
+    transform: rotateY(0deg);
+}
+.photo .side-front .image{
+    width: 100%;
+    height: 250px;
+    line-height: 250px;
+    overflow: hidden;
+}
+.photo .side-front .caption{
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
+.photo .side-back{
+    transform: rotateY(180deg);
+}
+.photo .side-back .desc{
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.photo-center{
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+    z-index: 999;
+}
+
+.photo-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, .7);
+    transform-style: preserve-3d;
+    transition: all .6s;
+    transform-origin: 0% 50%;
+}
+
+.photo-front .photo-wrap{
+    transform: translate(0px, 0px) rotateY(0deg);
+}
+.photo-back .photo-wrap{
+    transform: translate(260px, 0px) rotateY(180deg);
+}
+
+/*控制按钮*/
+.nav{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10%;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+.nav .i{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #aaa;
+    text-align: center;
+    border-radius: 50%;
+    transform: scale(.48);
+    transition: all .5s ;
+}
+.nav .i-current{
+    transform: scale(1);
+}
+.nav .i-current::before{
+    content: '\e965';
+    font-family: 'icons';
+    position: absolute;
+    width: 80%;
+    height: 30px;
+    left: 10%;
+    font-size: 80%;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav .i-back{
+    transform: rotateY(-180deg) ;
+    background-color: #555;
+}
