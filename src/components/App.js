@@ -122,6 +122,7 @@ class App extends Component{
     }
 
     render(){
+        const musicSrc = require('../static/music/circulation.mp3') ;
         return (
             <Fragment>
                 <Images
@@ -136,6 +137,7 @@ class App extends Component{
                     changeCenterImage={this.changeCenterImage}
                     changeImageStatus={this.changeImageStatus}
                 />
+                <audio src={musicSrc} autoPlay={true} loop={true}/>
             </Fragment>
         )
     }
